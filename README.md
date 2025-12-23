@@ -69,7 +69,7 @@ Constraints:
     
 - Prefer existing vault files over creating new ones.
     
-- New vault files are only for new MCP servers or major epics.
+- New vault files are only for new MCP servers or major skils/epics.
     
 
 Expected Output:
