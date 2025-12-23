@@ -4,9 +4,9 @@
 
 ## 1. Operating Context (USER MUST FILL)
 
-- **Local Platform:** macos``
+- **Local Platform:** ``
     
-- **AI Client:** Cloude desktop``
+- **AI Client:** ``
     
 - **Primary Local Executor MCP:** `desktop-commander`
     
@@ -43,12 +43,9 @@
 _(Capability Registry - Must have a corresponding file in the vault)_
 
 - **Name:** desktop-commander
-    - **Primary capabilities:** File system operations (read/write/edit/search), command execution, process management, interactive REPLs, directory management, configuration management
-    - **Vault location:** `/Users/gad.ofir/Documents/testmcp/testmcp/vault/desktop-commander.md`
+    - **Primary capabilities:** 
+    - **Vault location:** 
 
-- **Name:** environments
-    - **Primary capabilities:** Testing environment credentials and URLs (UAP, SCA projects with int77, prod02 environments), working environment URLs (GitHub, Jira, Confluence)
-    - **Vault location:** `/Users/gad.ofir/Documents/testmcp/testmcp/vault/environments.md`
         
 
 ---
@@ -58,14 +55,12 @@ _(Capability Registry - Must have a corresponding file in the vault)_
 **Authoritative Paths:**
 
 - `README.md`: Root Context
-- `vault/`: `/Users/gad.ofir/Documents/testmcp/testmcp/vault/` | MCP Server/Skill vault files
+
     
 
 **Frequently Used Paths:**
 
-- `desktop-commander vault`: `/Users/gad.ofir/Documents/testmcp/testmcp/vault/desktop-commander.md` | Primary local executor documentation
-- `environments vault`: `/Users/gad.ofir/Documents/testmcp/testmcp/vault/environments.md` | Testing and working environment credentials and URLs
-    
+
 
 ---
 
