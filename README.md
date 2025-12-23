@@ -21,9 +21,9 @@
 
 |**Value**|**Behavior**|
 |---|---|
-|**1 – Build mode**|Create `_update` files for structural changes; **Directly append** notes/commands to existing Vault files.|
-|**2 – Proposal mode**|Ask before creating/updating any `_update` or note file.|
-|**3 – Test / read-only mode**|No writes, no `_update` files; validate routing and logic only.|
+|**1 – Build mode**|Create `_update`  files for structural changes; **Directly append** notes/commands to existing Vault files .|
+|**2 – Proposal mode**|Ask before creating/updating any `_update` or append note to `_update`file.|
+|**3 – Test / read-only mode**|No writes, no `_update` files; validate routing and logic only no small notes also.|
 
 **Authority Rule:**
 
