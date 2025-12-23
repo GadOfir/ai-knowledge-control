@@ -8,7 +8,7 @@
     
 - **AI Client:** ``
     
-- **Primary Local Executor MCP:** `desktop-commander`
+- **Primary Local Executor MCP:** ``
     
 
     
