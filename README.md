@@ -247,6 +247,8 @@ Rules:
 3. Apply only after approval
     
 4. Update `readme_update.md` if global behavior changes
+
+5. Check if Execution Prompt needs Optimization
     
 
 ---
