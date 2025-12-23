@@ -1,198 +1,304 @@
-# README.md – Phase 1.1 (Operational Master)
+README.md – Phase 1.1 (Operational Master)
+System Overview
 
----
+This repository defines a routing-first, MCP-controlled Obsidian Knowledge Vault.
 
-## 1. Operating Context (USER MUST FILL)
+Its purpose is to allow an AI or human operator to:
 
-- **Local Platform:** ``
-    
-- **AI Client:** ``
-    
-- **Primary Local Executor MCP:** ``
-    
+Read structured knowledge
 
-    
+Make deterministic decisions
 
----
+Execute real actions via MCP servers
 
-## 2. Global Update Strategy & Authority
+Safely grow and optimize the vault over time
 
-**UPDATE_STRATEGY =** `1`
+This README.md file is the entry point, authority, and safety boundary for the entire system.
 
-|**Value**|**Behavior**|
-|---|---|
-|**1 – Build mode**|Create `_update`  files for structural changes; **Directly append** notes/commands to existing Vault files .|
-|**2 – Proposal mode**|Ask before creating/updating any `_update` or append note to `_update`file.|
-|**3 – Test / read-only mode**|No writes, no `_update` files; validate routing and logic only no small notes also.|
+Core Components
 
-**Authority Rule:**
+Claude Desktop (AI Agent)
+Primary reasoning and orchestration engine.
 
-- README.md is the **Single Source of Truth** for routing, update governance, and execution safety.
-    
-- MCP must read this file before any other.
-    
-- Conflicting info in other files → **README.md rules win**.
-    
-- `_update` files are **never read during runtime execution**.
-    
+Obsidian MCP + Obsidian Vault
+Structured, persistent knowledge storage.
+MCP must be configured to point to the vault directory containing this README.md.
 
----
+MCP Shell Runner (desktop-commander)
+Enables real-world execution (file operations, commands, scripts) under strict routing and update rules.
 
-## 3. Available MCP Servers or Skills
+Execution Prompt (Copy & Use)
 
-_(Capability Registry - Must have a corresponding file in the vault)_
+Use this prompt when starting a new session or explicitly invoking this vault.
 
-- **Name:** desktop-commander
-    - **Primary capabilities:** 
-    - **Vault location:** 
+You are operating inside an MCP-controlled Obsidian Knowledge Vault.
 
-        
+Global Rules:
 
----
+You MUST read and follow this README.md before accessing any other file.
 
-## 4. Canonical Paths Registry (Authoritative)
+This file is the Single Source of Truth for routing, update strategy, and execution authority.
 
-**Authoritative Paths:**
+_update files are staging-only and MUST NEVER be read or executed during runtime.
 
-- `README.md`: Root Context
+Always follow Decision Chains and strict priority order.
 
-    
+If required information is missing, STOP and ask the user.
 
-**Frequently Used Paths:**
+Update Strategy:
 
+Follow UPDATE_STRATEGY defined below.
 
+Creation of new vault files ALWAYS requires explicit user confirmation.
 
----
+Task:
+<DESCRIBE YOUR GOAL HERE>
 
-## 5. Task Classification & Decision Chains
+Constraints:
 
-Decision Chain Structure (Strict Priority):
+Do not assume paths, credentials, or environments.
 
-Decision Chain → Context Source → Primary Knowledge Source → Fallback Source → MCP Execution.
+Prefer existing vault files over creating new ones.
 
-1. **Consult Authority:** Check README.md for rules or specific Decision Chains.
-   
-    
-2. **Locate Context:** Check Vault logs for similar past tasks or Context IDs. 
-    
-3. **Execute:** Use the appropriate MCP server or skill defined in Section 3.
-    
+New vault files are only for new MCP servers or major epics.
 
----
+Expected Output:
 
-## 6. Shadow Update Files (`_update` Mechanism)
+Clear actions taken or proposed
 
-**Purpose:** Stage proposed changes safely without auto-overwriting originals.
+Correct MCP routing
 
-**Rules:**
+No uncontrolled writes
 
-- **Required for:** Significant structural changes, logic updates, or file refactors or any new comments ,if **UPDATE_STRATEGY = 2  ask in prompt , before any change 
-    
-- **Not required for:** when .**UPDATE_STRATEGY = 3 ** 
+Prompt Quality Checklist (Authority-Governed)
 
-    
-- **Format:** Must contain current state detection, proposed logic, and the specific section being updated.
-    
+All Execution Prompts in this repository (README and Vault files) must meet this checklist.
 
----
+1. Clarity
 
-## 7. Optimization & Reconciliation Policy
+Explicitly states context and scope
 
-**Flow:**
+Uses deterministic language
 
-1. Locate `_update` file and compare against original.
-    
-2. Propose changes to user; **never auto-apply**.
-    
-3. If approved, update the original file and **update readme_update.md** if needed.
-    
+Avoids vague verbs (“handle”, “maybe”, “try”)
 
----
+2. Safety
 
-## 8. Vault Creation & Expansion Policy
+References README.md as authority
 
-- **New Vault Files:** Created for new MCP or  servers or significant project Epics/Skills.
-    
-- **Mandatory Registry Update:** Upon creation of any new Vault file, the AI **MUST** immediately update **Section 3 (Capability Registry)** and **Section 4 (Paths)** in the README to reflect the new resource.
-    
-- **Cross-Vault Linking:** If an action affects multiple files, provide a reference link between them to avoid duplication.
-    
-- **Context-Aware Triggers:** AI will assign a `Context ID` (e.g., `TASK-101`) to all command logs to allow for history tracking and self-healing.
-    
-- **User Confirmation:** Creation of all new `.md` files requires user approval, even in Strategy 1.
-* ***Path Discovery:** If a specific local path is used frequently across tasks, the AI must propose adding it to the **Section 4 Registry** to prevent path-guessing in future sessions.
+Respects UPDATE_STRATEGY
 
+Forbids runtime use of _update files
 
----
+Prevents silent writes or file creation
 
-## 9. Maintenance & Self-Optimization
+Instructs to stop and ask when information is missing
 
-- **Summarization:** Every 20 entries in a Vault file, AI must propose a summary of "Key Learnings" to the top of the file via the `_update` mechanism.
-    
-- **No Data Loss:** No information is permanently deleted; old or redundant data must be moved to `./vault/archive/` before removal from active files.
-    
-- **Reporting Protocol:** AI will present maintenance summaries via `_update`. Approved insights are mirrored in a "System Insights" section in README.md for visibility.
-    
+3. Completeness
 
----
+Includes context
 
-## 10. Pre-Creation Protocol (Inquiry First)
+Defines constraints
 
-**Before creating any new Vault file, AI MUST stop and ask the user:**
+Describes expected output
 
-1. **Scope Definition:** What is the exact boundary of this file's responsibility?
-    
-2. **Existing Knowledge:** Are there past commands, scripts, or errors that should be documented immediately?
-    
-3. **Missing Info:** Are technical details (ports, specific hostnames, or permissions) missing that are needed to fill the template?
-    
-4. **Registry Confirmation:** Acknowledge that Section 3 will be updated with this new skill/server upon creation.
-    
+Specifies routing expectations (Decision Chains / MCP)
 
----
+Prompt Optimization Rules
 
-## 11. Vault File Template (V1.1)
+Prompts may be optimized only via _update files
 
-Markdown
+Optimization must state which checklist item is improved and why
 
-```
+Runtime execution always uses the approved prompt in the main file
+
+1. Operating Context (USER MUST FILL)
+
+Local Platform: ``
+
+AI Client: ``
+
+Primary Local Executor MCP: ``
+
+2. Global Update Strategy & Authority
+
+UPDATE_STRATEGY = 1
+
+Value	Behavior
+1 – Build mode	Create _update files for structural changes; directly append small notes/commands to existing vault files
+2 – Proposal mode	Ask before creating or updating any _update file or appending notes
+3 – Test / read-only mode	No writes, no _update files; validate routing and logic only
+
+Authority Rules
+
+README.md is the Single Source of Truth
+
+MCP must read this file before any other
+
+Conflicts → README.md wins
+
+_update files are never used at runtime
+
+3. Available MCP Servers or Skills
+
+(Capability Registry – must have a corresponding vault file)
+
+Name: desktop-commander
+
+Primary capabilities:
+
+Vault location:
+
+4. Canonical Paths Registry (Authoritative)
+
+Authoritative Paths
+
+README.md: Root Context
+
+Frequently Used Paths
+
+(Add as discovered and approved)
+
+5. Task Classification & Decision Chains
+
+Decision Chain Structure (Strict Priority)
+
+Decision Chain
+→ Context Source
+→ Primary Knowledge Source
+→ Fallback Source
+→ MCP Execution
+
+Execution Order:
+
+Consult README.md
+
+Locate existing vault context
+
+Execute using the appropriate MCP
+
+Skip irrelevant chains.
+Always follow priority order.
+
+6. Shadow Update Files (_update Mechanism)
+
+Purpose: Stage changes safely without overwriting originals.
+
+Rules:
+
+Required for structural changes, logic updates, refactors
+
+Governed by UPDATE_STRATEGY
+
+Must explain:
+
+What was observed
+
+Why change is needed
+
+What section is affected
+
+7. Optimization & Reconciliation Policy
+
+Compare _update file with original
+
+Propose changes to the user
+
+Apply only after approval
+
+Update readme_update.md if global behavior changes
+
+8. Vault Creation & Expansion Policy
+
+New vault files only for:
+
+New MCP servers
+
+Major epics or skills
+
+README Sections 3 and 4 MUST be updated upon creation
+
+Cross-link related files
+
+Assign Context IDs to logs
+
+User confirmation required for every new file
+
+Frequently used paths must be proposed for registry inclusion
+
+9. Maintenance & Self-Optimization
+
+Every 20 entries → propose summary via _update
+
+No data deletion without archiving
+
+Approved insights mirrored into README.md
+
+10. Pre-Creation Protocol (Inquiry First)
+
+Before creating any new vault file, AI MUST ask:
+
+What is the scope?
+
+What existing knowledge should be captured?
+
+What information is missing?
+
+Confirm registry update
+
+11. Vault File Template (V1.2)
 # <Name> – Vault File (AUTO-GENERATED)
 **Metadata:** [Logic: Phase 1.1 | Strategy: <UPDATE_STRATEGY>]
-**Active Context:** [ID: <Auto-Generated Context ID> | Task: <Description>]
+**Active Context:** [ID: <Context ID> | Task: <Description>]
+
+## Execution Prompt (Copy & Use)
+
+Context:
+- Vault File: <Name>
+- Authority: README.md
+- Update Strategy: Inherited
+
+Rules:
+- `_update` files are never used at runtime
+- Follow Decision Chain strictly
+- Ask before creating new files
+
+Task:
+<DESCRIBE WHAT YOU WANT TO DO>
+
+Expected Output:
+- Actions taken or proposed
+- Commands or issues logged
+- Clear next steps
 
 ## Purpose
-- Describe server tasks skils or epic scope.
+- Describe skill or epic scope
 
-## Decision Chains (Inherited)
-- Specific logic chains for this file's context.
+## Decision Chains
+- Local chains for this file
 
-## Common Commands (Direct Append allowed in Strategy 1)
-- Commands, scripts, or procedures used during execution.
+## Common Commands
+- Frequently used commands
 
-## Common Issues (Direct Append allowed in Strategy 1)
-- Errors encountered (Testing | Infrastructure | Unknown).
+## Common Issues
+- Errors (Testing | Infrastructure | Unknown)
 
-## Key Learnings / Summary
-- Distilled insights from maintenance cycles.
+## Key Learnings
+- Summarized insights
 
-## Notes / Observations
-- Detected behaviors, optimization hints, or Context ID summaries.
-```
+## Notes
+- Observations and context references
 
----
+12. Onboarding & System Start (TEMPORARY)
 
-## 12. Onboarding & System Start (TEMPORARY)
+Status: [PENDING INITIALIZATION]
 
-**Status:** `[PENDING INITIALIZATION]`
+Once the first vault file is created:
 
-**Mandatory Sequence:**
+Move onboarding text to vault/miscellaneous.md
 
-1. **Fill Context:** User must populate Section 1, 2, and 3.
-    
-2. **Cleanup Trigger:** Once the first Vault file (e.g., `vault/mcp-mac-cli.md`) is created, the AI will:
-    
-    - Create `vault/miscellaneous.md`.
-        
-    - Move all instructional text (like this Section 12) to that file.
-        
-    - Delete this Section 12 from README.md to move to "Production Mode."
+Remove this section from README.md
+
+System enters Production Mode
+
+End of README
