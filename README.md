@@ -169,7 +169,8 @@ All **Execution Prompts** in this repository (README and Vault files) must meet 
 
 _(Capability Registry – must have a corresponding vault file)_
 
-- **Name:** desktop-commander
+
+- **Name:** 
     
     - **Primary capabilities:**
         
