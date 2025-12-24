@@ -4,7 +4,7 @@
 
 ## System Overview
 
-This repository defines a **routing-first, MCP-controlled Obsidian Knowledge Vault**.
+This repository defines a **routing-first, data / skill / project–controlled Obsidian Knowledge Vault**.
 
 Its purpose is to allow an AI or human operator to:
 
@@ -12,7 +12,7 @@ Its purpose is to allow an AI or human operator to:
     
 - Make deterministic decisions
     
-- Execute real actions via MCP servers
+- Execute real actions via skills and projects
     
 - Safely grow and optimize the vault over time
     
@@ -38,7 +38,7 @@ This `README.md` file is the **entry point, authority, and safety boundary** for
 
 Use this prompt when starting a new session or explicitly invoking this vault.
 
-You are operating inside an **MCP-controlled Obsidian Knowledge Vault**.
+You are operating inside an **You are operating inside a capability-controlled Obsidian Knowledge Vault (data / skills / projects)**.
 
 Global Rules:
 
@@ -192,8 +192,7 @@ _(Capability Registry – must have a corresponding vault file)_
         
     - **Vault location:**
 
-    - - **Type:**
-        data skill project
+    - - **Type: Data | Skill | Project:**
 
 ---
 
