@@ -2,7 +2,7 @@
 
 ---
 
-## System Overview
+## System Overview (Authority & Scope)
 
 This repository defines a **routing-first, data / skill / project–controlled Obsidian Knowledge Vault**.
 
@@ -23,7 +23,7 @@ This `README.md` file is the **entry point, authority, and safety boundary** for
     
 ---
 
-## Execution Prompt (Copy & Use)
+## Execution Prompt (Runtime Authority)
 
 Use this prompt when starting a new session or explicitly invoking this vault.
 
@@ -72,7 +72,7 @@ Expected Output:
 
 ---
 
-## Prompt Quality Checklist (Authority-Governed)
+## Prompt Quality Checklist (Design-Time Only)
 
 All **Execution Prompts** in this repository (README and Vault files) must meet this checklist.
 
@@ -282,7 +282,7 @@ Rules:
 
 ---
 
-## 9. Maintenance & Self-Optimization
+## 9. Ongoing Maintenance (Post-Approval Only)
 
 - Every 20 entries → propose summary via `_update`
     
