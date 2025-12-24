@@ -45,7 +45,7 @@ _The AI must maintain this table. Any file/container not listed here is "Invisib
 
 | CID  | Name   | Type  | Capability / Purpose            | Authoritative Path |
 |------|--------|-------|--------------------------------|------------------|
-| R01  | README | Logic | System Authority & Routing      | `README.md`      |
+| R01  | README | Skill | System Authority & Routing      | `README.md`      |
 
 ---
 
@@ -67,7 +67,7 @@ If no relevant CID is found, follow this protocol:
 
 ## 4. Shadow Staging & Reconciliation (Strict Safety)
 
-- **Staging:** Create `filename_update.md` for **ANY** change (Logic, Logs, or Notes).  
+- **Staging:** Create `filename_update.md` for **ANY change to vault content.**
 - **No Direct Writing:** The AI will never modify an original file without a staged proposal.  
 - **Reconciliation:** Compare `_update` with original → Propose to user → Apply only after approval.  
 - **Cleanup:** Delete `_update` files immediately after successful reconciliation.
