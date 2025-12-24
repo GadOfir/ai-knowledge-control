@@ -1,372 +1,98 @@
 # README.md – System Operational Master
 
----
+## 🏁 System Onboarding: [██░░░░░░░░] 20%
 
-## System Overview (Authority & Scope)
-
-This repository defines a **routing-first, data / skill / project–controlled Obsidian Knowledge Vault**.
-
-Its purpose is to allow an AI or human operator to:
-
-- Read structured knowledge
-    
-- Make deterministic decisions
-    
-- Execute real actions via skills and projects
-    
-- Safely grow and optimize the vault over time
-    
-Start of README
-This `README.md` file is the **entry point, authority, and safety boundary** for the entire system.
-
-
-    
----
-
-## Execution Prompt (Runtime Authority)
-
-Use this prompt when starting a new session or explicitly invoking this vault.
-
-**You are operating inside a capability-controlled Obsidian Knowledge Vault (data / skills / projects)**.
-
-Global Rules:
-
-- You MUST read and follow this `README.md` before accessing any other file.
-    
-- This file is the **Single Source of Truth** for routing, update strategy, and execution authority.
-    
-- `_update` files are staging-only and MUST NEVER be read or executed during runtime.
-    
-- Always follow Decision Chains and strict priority order.
-    
-- If required information is missing, STOP and ask the user.
-    
-
-Update Strategy:
-
-- Follow `UPDATE_STRATEGY` defined below.
-    
-- Creation of new vault files ALWAYS requires explicit user confirmation.
-    
-
-Task:  
-`<DESCRIBE YOUR GOAL HERE>`
-
-Constraints:
-
-- Do not assume paths, credentials, or environments.
-    
-- Prefer existing vault files over creating new ones.
-    
-- New vault files are only for new data sources, skills, or major projects.
-    
-
-Expected Output:
-
-- Clear actions taken or proposed
-    
-- Correct capability routing (data → skill → project)
-    
-- No uncontrolled writes
-    
+> **Status:** ENVIRONMENT_SYNCED | **Goal:** Initialize Registry & Skills.
+> 
+> **Expert Shortcut:** Type `INIT_COMPLETE` to move this module to `vault/miscellaneous.md`.
 
 ---
 
-## Prompt Quality Checklist (Design-Time Only)
+### System Overview (Authority & Scope)
+This repository is a **routing-first, capability-controlled Obsidian Knowledge Vault**. It ensures all AI actions are deterministic and safe through strict data typing (**Data, Skill, Project**).
 
-All **Execution Prompts** in this repository (README and Vault files) must meet this checklist.
+> [!INFO] **Why?** > By categorizing knowledge, the AI never guesses which rules to follow; it knows if it's looking at a "How-to" (**Skill**) or a "Working Draft" (**Project**).
 
-### 1. Clarity
-
-- Explicitly states context and scope
-    
-- Uses deterministic language
-    
-- Avoids vague verbs (“handle”, “maybe”, “try”)
-    
-
-### 2. Safety
-
-- References README.md as authority
-    
-- Respects `UPDATE_STRATEGY`
-    
-- Forbids runtime use of `_update` files
-    
-- Prevents silent writes or file creation
-    
-- Instructs to stop and ask when information is missing
-    
-
-### 3. Completeness
-
-- Includes context
-    
-- Defines constraints
-    
-- Describes expected output
-    
-- Specifies routing expectations (Decision Chains / capabilities)
-    
-
-**Prompt Optimization Rules**
-
-- Prompts may be optimized only via `_update` files
-    
-- Optimization must state which checklist item is improved and why
-    
-- Runtime execution always uses the approved prompt in the main file
-    
+### Execution Prompt (Runtime Authority)
+You are operating inside a capability-controlled Obsidian Knowledge Vault.
+- **Authority:** `README.md` is the **Single Source of Truth**.
+- **Safety:** The AI is **FORBIDDEN** from writing to original files directly.
+- **Protocol:** All changes (Logs, Notes, Logic) **MUST** be staged in `_update` files and approved by the user before merging.
 
 ---
 
-## 1. Operating Context (USER MUST FILL)
+### 1. Global Update Strategy & Authority
+**UPDATE_STRATEGY = 1**
 
-- **Local Platform:** ``
-    
-- **AI Client:** ``
-    
-- **Primary Local Executor (skill / runner):** ``
-
-    ## Conceptual Model (Data / Skills / Projects)
-
-
-- **Data**  
-  Static or dynamic environment details, facts, configuration, or context  
-  (e.g. environment details, system state, tenant info)
-
-- **Skill**  
-  Instructions that define *how the AI should act*  
-  (e.g. testing procedures, analysis rules, behavioral constraints)
-
-- **Project**  
-  Goal-oriented work units with scope and intent  
-  (e.g. testing project, new development effort, investigation plan)
-
-All routing, decision chains, and execution logic operate on these three types.
+| Value | Behavior |
+| :--- | :--- |
+| **1 – Build** | Stage **ALL** data (Notes, Logs, Structure) in `_update` files for user review. |
+| **2 – Proposal** | Ask for permission *before* even creating an `_update` file. |
+| **3 – Read-Only** | No writes allowed; validate routing and logic only. |
 
 ---
 
-## 2. Global Update Strategy & Authority
+### 2. Master Vault Registry (Index & Paths)
+*The AI must maintain this table. Any file/container not listed here is "Invisible" to the system.*
 
-**UPDATE_STRATEGY =** `1`
-
-|Value|Behavior|
-|---|---|
-|**1 – Build mode**|Create `_update` files for structural changes; directly append small notes/commands to existing vault files|
-|**2 – Proposal mode**|Ask before creating or updating any `_update` file or appending notes|
-|**3 – Test / read-only mode**|No writes, no `_update` files; validate routing and logic only|
-
-**Authority Rules**
-
-- README.md is the **Single Source of Truth**
-    
-- All skills and projects must read this file before any execution
-    
-- Conflicts → README.md wins
-    
-- `_update` files are never used at runtime
-    
+| CID | Name | Type | Capability / Purpose | Authoritative Path |
+| :--- | :--- | :--- | :--- | :--- |
+| **R01** | README | Logic | System Authority & Routing | `README.md` |
 
 ---
 
-## 3. Available Data, Skills, and Projects
+### 3. Unified Execution Brain (Routing & Growth)
 
-_(Capability Registry The AI must maintain this list. If a file is created and not listed here, it is "Invisible" to the Decision Chain)_
+**Phase A: Routing (Decision Chain)**
+1. **Consult R01:** Establish global rules and current strategy.
+2. **Locate Context:** Search Section 2 for existing CIDs matching the task.
+3. **Execute:** If found, use the approved file's Execution Prompt.
 
-
-- **Name:** 
-    
-    - **Primary capabilities:**
-        
-    - **Vault location:**
-
-    - - **Type: Data | Skill | Project:**
-
----
-
-## 4. Canonical Paths Registry (Authoritative)
-
-**Authoritative Paths**
-
-- `README.md`: Root Context
-    
-
-**Frequently Used Paths**
-
-- _(Add as discovered and approved)_
-    
+**Phase B: Growth (Pre-Creation Protocol)**
+If no relevant CID is found, follow this protocol:
+1. **Inquiry:** Ask the user for scope and existing knowledge to be captured.
+2. **Missing Info:** Identify missing technical details (ports, hostnames, permissions).
+3. **Registry Proposal:** Propose a new CID, Type, and Path for Section 2.
 
 ---
 
-## 5. Task Classification & Decision Chains
-**This section defines how tasks are routed from context to execution.**
-**Decision Chain Structure (Strict Priority)**
-
-Decision Chain  
-→ Context Source  
-→ Primary Knowledge Source  
-→ Fallback Source  
-→ Skill or Project Execution
-
-Execution Order:
-
-1. Consult README.md
-    
-2. Locate existing vault context
-    
-3. Execute using the appropriate skill or project
-    
-
-Skip irrelevant chains.  
-Always follow priority order.
+### 4. Shadow Staging & Reconciliation (Strict Safety)
+- **Staging:** Create `filename_update.md` for **ANY** change (Logic, Logs, or Notes).
+- **No Direct Writing:** The AI will never modify an original file without a staged proposal.
+- **Reconciliation:** Compare `_update` with original → Propose to user → Apply only after approval.
+- **Cleanup:** Delete `_update` files immediately after successful reconciliation.
 
 ---
 
-## 6. Shadow Update Files (`_update` Mechanism)
-
-**Purpose:** Stage changes safely without overwriting originals.
-
-Rules:
-
-- Required for structural changes, logic updates, refactors
-    
-- Governed by `UPDATE_STRATEGY`
-    
-- Must explain:
-    
-    - What was observed
-        
-    - Why change is needed
-        
-    - What section is affected
-        
+### 5. Vault Expansion & Autonomy Policy
+- **Data & Skill Files:** Requires individual user confirmation and Registry entry for every file.
+- **Project Autonomy:** Requires confirmation for the **Project Root Folder** and **Index File** only.
+- **Local Freedom:** Inside an approved Project Folder, the AI may create sub-folders and files (logs, artifacts) without individual Registry entries, provided they are linked in the Project Index.
 
 ---
 
-## 7. Optimization & Reconciliation Policy
-
-1. Compare `_update` file with original
-    
-2. Propose changes to the user
-    
-3. Apply only after approval
-    
-4. Update `readme_update.md` if global behavior changes
-
-5. Check if Execution Prompt needs Optimization
-    
+### 6. Maintenance & Self-Healing
+- **Summarization:** Every 20 entries → propose summary via `_update`.
+- **Self-Healing:** Periodically verify that all Registry CIDs match file metadata.
+- **Path Repair:** If a file is moved, use the CID to find it and update Section 2.
 
 ---
 
-## 8. Vault Creation & Expansion Policy
-
-- New vault files only for:
-    
-    - New data sources
-        
-    - New skills
- 
-    - Major projects
-        
-- README Sections 3 and 4 MUST be updated upon creation
-    
-- Cross-link related files
-    
-- Assign Context IDs to logs
-    
-- User confirmation required for every new file
-    
-- Frequently used paths must be proposed for registry inclusion
-    
-
----
-
-## 9. Ongoing Maintenance (Post-Approval Only)
-
-- Every 20 entries → propose summary via `_update`
-    
-- No data deletion without archiving
-    
-- Approved insights mirrored into README.md
-    
-
----
-
-## 10. Pre-Creation Protocol (Inquiry First)
-
-Before creating any new vault file, AI MUST ask:
-
-1. What is the scope?
-    
-2. What existing knowledge should be captured?
-    
-3. What information is missing?
-    
-4. Confirm registry update
-    
-
----
-
-## 11. Vault File Template (V1.2)
+### 7. Vault File Template (V1.3)
 # <Name> – Vault File (AUTO-GENERATED)
-**Metadata: [Type: Data | Skill | Project | Strategy: <UPDATE_STRATEGY>]
+**Metadata:** [Type: Data | Skill | Project | Strategy: <UPDATE_STRATEGY>]
 **Active Context:** [ID: <Context ID> | Task: <Description>]
 
-## Execution Prompt (Copy & Use)
-
-Context:
-- Vault File: <Name>
-- Authority: README.md
-- Update Strategy: Inherited
-
-Rules:
-- `_update` files are never used at runtime
-- Follow Decision Chain strictly
-- Ask before creating new files
-
-Task:
-<DESCRIBE WHAT YOU WANT TO DO>
-
-Expected Output:
-- Actions taken or proposed
-- Commands or issues logged
-- Clear next steps
-
-## Purpose
-- Describe skill or epic scope
-
-## Decision Chains
-- Local chains for this file
-
-## Common Commands
-- Frequently used commands
-
-## Common Issues
-- Errors (Testing | Infrastructure | Unknown)
-
-## Key Learnings
-- Summarized insights
-
-## Notes
-- Observations and context references
-
+#### Execution Prompt (Copy & Use)
+- **Authority:** `README.md` | **Update Strategy:** Inherited
+- **Rules:** **STAGING ONLY**. Do not write to original files.
+- **Task:** <DESCRIBE GOAL>
+- **Expected Output:** A staged `_update` file containing actions/logs for user review.
 
 ---
 
-## 12. Onboarding & System Start (TEMPORARY)
+### 9. [SYSTEM STATE: INITIALIZING]
+- **Environment:** Platform: `Windows` | Client: `Cursor` | Executor: `PowerShell`
+- **Next Step:** Type **`INIT_COMPLETE`** to finalize onboarding or suggest a new Skill/Data file for the Registry.
 
-**Status:** `[PENDING INITIALIZATION]`
-
-Once the first vault file is created:
-
-- Move onboarding text to `vault/miscellaneous.md`
-    
-- Remove this section from README.md
-    
-- System enters Production Mode
-    
-
----
-
-### End of README
+**End of README**
