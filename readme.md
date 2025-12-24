@@ -79,6 +79,7 @@ If no relevant CID is found, follow this protocol:
 - **Data & Skill Files:** Requires individual user confirmation and Registry entry for every file.  
 - **Project Autonomy:** Requires confirmation for the **Project Root Folder** and **Index File** only.  
 - **Local Freedom:** Inside an approved Project Folder, the AI may create sub-folders and files (logs, artifacts) without individual Registry entries, provided they are linked in the Project Index.
+- **Root has the only README.md; sub-folders use CONTEXT.md, never README.md.**
 
 ---
 
