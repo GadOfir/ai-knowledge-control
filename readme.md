@@ -1,6 +1,6 @@
 # README.md – System Operational Master
 
-## 🏁 System Onboarding: [█████████░] 90%
+## 🏁 System Onboarding: [░░░░░░░░░░] 0%
 
 > Status: FINAL VALIDATION | Goal: Transition to PRODUCTION.
 >
@@ -43,11 +43,9 @@ This repository is a **routing-first, capability-controlled Obsidian Knowledge V
 
 _The AI must maintain this table. Any file/container not listed here is "Invisible" to the system._
 
-| CID  | Name                 | Type  | Capability / Purpose                            | Authoritative Path                |
-|------|---------------------|-------|-----------------------------------------------|----------------------------------|
-| R01  | README              | Logic | System Authority & Routing                     | `README.md`                      |
-| S01  | desktop-commander   | Skill | File system, command execution, process mgmt  | `vault/desktop-commander.md`     |
-| D01  | environments        | Data  | Testing credentials & Working URLs            | `vault/environments.md`          |
+| CID  | Name   | Type  | Capability / Purpose            | Authoritative Path |
+|------|--------|-------|--------------------------------|------------------|
+| R01  | README | Logic | System Authority & Routing      | `README.md`      |
 
 ---
 
@@ -112,7 +110,6 @@ _(Followed by: Purpose, Decision Chains, Common Commands, Common Issues, Key Lea
 
 ## 8. [SYSTEM STATE: INITIALIZING]
 
-- **Environment:** Platform: `macos` | Client: `Claude Desktop` | Executor: `desktop-commander`  
 - **Next Step:** Type **`INIT_COMPLETE`** to finalize onboarding.
 
 ---
