@@ -69,14 +69,14 @@ Constraints:
     
 - Prefer existing vault files over creating new ones.
     
-- New vault files are only for new MCP servers or major skils/epics.
+- New vault files are only for new data sources, skills, or major projects.
     
 
 Expected Output:
 
 - Clear actions taken or proposed
     
-- Correct MCP routing
+- Correct capability routing (data → skill → project)
     
 - No uncontrolled writes
     
@@ -117,7 +117,7 @@ All **Execution Prompts** in this repository (README and Vault files) must meet 
     
 - Describes expected output
     
-- Specifies routing expectations (Decision Chains / MCP)
+- Specifies routing expectations (Decision Chains / capabilities)
     
 
 **Prompt Optimization Rules**
@@ -137,8 +137,24 @@ All **Execution Prompts** in this repository (README and Vault files) must meet 
     
 - **AI Client:** ``
     
-- **Primary Local Executor MCP:** ``
-    
+- **Primary Local Executor (skill / runner):** ``
+
+    ## Conceptual Model (Data / Skills / Projects)
+
+
+- **Data**  
+  Static or dynamic environment details, facts, configuration, or context  
+  (e.g. environment details, system state, tenant info)
+
+- **Skill**  
+  Instructions that define *how the AI should act*  
+  (e.g. testing procedures, analysis rules, behavioral constraints)
+
+- **Project**  
+  Goal-oriented work units with scope and intent  
+  (e.g. testing project, new development effort, investigation plan)
+
+All routing, decision chains, and execution logic operate on these three types.
 
 ---
 
@@ -156,7 +172,7 @@ All **Execution Prompts** in this repository (README and Vault files) must meet 
 
 - README.md is the **Single Source of Truth**
     
-- MCP must read this file before any other
+- All skills and projects must read this file before any execution
     
 - Conflicts → README.md wins
     
@@ -165,7 +181,7 @@ All **Execution Prompts** in this repository (README and Vault files) must meet 
 
 ---
 
-## 3. Available MCP Servers or Skills
+## 3. Available Data, Skills, and Projects
 
 _(Capability Registry – must have a corresponding vault file)_
 
@@ -175,7 +191,9 @@ _(Capability Registry – must have a corresponding vault file)_
     - **Primary capabilities:**
         
     - **Vault location:**
-        
+
+    - - **Type:**
+        data skill project
 
 ---
 
@@ -201,7 +219,7 @@ Decision Chain
 → Context Source  
 → Primary Knowledge Source  
 → Fallback Source  
-→ MCP Execution
+→ Skill or Project Execution
 
 Execution Order:
 
@@ -209,7 +227,7 @@ Execution Order:
     
 2. Locate existing vault context
     
-3. Execute using the appropriate MCP
+3. Execute using the appropriate skill or project
     
 
 Skip irrelevant chains.  
@@ -257,9 +275,11 @@ Rules:
 
 - New vault files only for:
     
-    - New MCP servers
+    - New data sources
         
-    - Major epics or skills
+    - New skills
+ 
+    - Major projects
         
 - README Sections 3 and 4 MUST be updated upon creation
     
@@ -302,7 +322,7 @@ Before creating any new vault file, AI MUST ask:
 
 ## 11. Vault File Template (V1.2)
 # <Name> – Vault File (AUTO-GENERATED)
-**Metadata:** [Logic: Phase 1.1 | Strategy: <UPDATE_STRATEGY>]
+**Metadata:** [Type: Data | Skill | Project | Logic: Phase 1.1 | Strategy: <UPDATE_STRATEGY>]
 **Active Context:** [ID: <Context ID> | Task: <Description>]
 
 ## Execution Prompt (Copy & Use)
