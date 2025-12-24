@@ -1,13 +1,12 @@
 ---
 
-# README.md – System Operational Master
+  # README.md – System Operational Master
 
-## 🏁 System Onboarding: [█████████░] 90%
+  ## 🏁 System Onboarding: [█████████░] 90%
 
-> Status: FINAL VALIDATION | Goal: Transition to PRODUCTION.
->
-> Expert Shortcut: Type INIT_COMPLETE to move this module to vault/miscellaneous.md.
-
+  > Status: FINAL VALIDATION | Goal: Transition to PRODUCTION.
+  >
+  > Expert Shortcut: Type INIT_COMPLETE to move this module to vault/miscellaneous.md.
 ---
 
 ## System Overview (Authority & Scope)
