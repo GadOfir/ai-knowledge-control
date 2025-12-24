@@ -4,7 +4,7 @@
 
 > Status: FINAL VALIDATION | Goal: Transition to PRODUCTION.
 >
-> Expert Shortcut: Type `INIT_COMPLETE` to move this module to `vault/miscellaneous.md`.
+> Expert Shortcut: Type `INIT_COMPLETE` to archive this onboarding guide to `vault/miscellaneous/onboarding-archive.md` and activate production mode.
 
 ---
 
@@ -13,7 +13,7 @@
 This repository is a **routing-first, capability-controlled Obsidian Knowledge Vault**. It ensures all AI actions are deterministic and safe through strict data typing (**Data, Skill, Project**).
 
 > [!INFO] **Why?**  
-> By categorizing knowledge, the AI never guesses which rules to follow; it knows if it's looking at a "How-to" (Skill) or a "Working Draft" (Project).
+> By categorizing knowledge, the AI never guesses which rules to follow. It knows whether it's reading reference facts (Data), step-by-step procedures (Skill), or active work tracking (Project).
 
 ---
 
@@ -53,8 +53,8 @@ _The AI must maintain this table. Any file/container not listed here is "Invisib
 
 ### Phase A: Routing (Decision Chain)
 1. **Consult R01:** Establish global rules and current strategy.  
-2. **Locate Context:** Search Section 2 for existing CIDs matching the task.  
-3. **Execute:** If found, use the approved file's Execution Prompt.  
+2. **Locate Context:** Search Section 2 Registry for CIDs whose Purpose/Capability matches the user's request  
+3. **Execute:** If found, open that file, read its Execution Prompt, and follow those instructions combined with global rules 
 
 ### Phase B: Growth (Pre-Creation Protocol)
 If no relevant CID is found, follow this protocol:
@@ -85,7 +85,7 @@ If no relevant CID is found, follow this protocol:
 ## 6. Maintenance & Self-Healing
 
 - **Summarization:** Every 20 entries → propose summary via `_update`.  
-- **Self-Healing:** Periodically verify that all Registry CIDs match file metadata.  
+- **Self-Healing:** On every 10th operation, verify that all Registry CIDs match actual file metadata. If mismatch found, propose correction via _update.  
 - **Path Repair:** If a file is moved, use the CID to find it and update Section 2.
 
 ---
@@ -95,7 +95,7 @@ If no relevant CID is found, follow this protocol:
 # <Name> – Vault File (AUTO-GENERATED)
 
 Metadata: [Type: Data | Skill | Project | Strategy: `<UPDATE_STRATEGY>`]  
-Active Context: [ID: `<Context ID>` | Task: `<Description>`]
+Active Context: [CID: `<Registry ID>` | Task: `<Current Operation Description>`]
 
 ### Execution Prompt (Copy & Use)
 
@@ -104,7 +104,23 @@ Active Context: [ID: `<Context ID>` | Task: `<Description>`]
 - Task: `<DESCRIBE GOAL>`  
 - Expected Output: A staged `_update` file containing actions/logs for user review.
 
-_(Followed by: Purpose, Decision Chains, Common Commands, Common Issues, Key Learnings, and Notes)_
+### Purpose
+What this file exists to accomplish.
+
+### Decision Chains  
+If-then logic for common scenarios in this domain.
+
+### Common Commands
+Frequently used commands/code snippets for this context.
+
+### Common Issues
+Known problems and their solutions.
+
+### Key Learnings
+Important discoveries from real use.
+
+### Notes
+Miscellaneous observations and context.
 
 ---
 
