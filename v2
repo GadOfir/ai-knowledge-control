@@ -1,0 +1,203 @@
+ README.md – Phase 1.1 (Operational Master)
+
+---
+
+## 1. Operating Context (USER MUST FILL)
+
+- **Local Platform:** macos``
+    
+- **AI Client:** Cloude desktop``
+    
+- **Primary Local Executor MCP:** `desktop-commander`
+    
+
+    
+
+---
+
+## 2. Global Update Strategy & Authority
+
+**UPDATE_STRATEGY =** `1`
+
+|**Value**|**Behavior**|
+|---|---|
+|**1 – Build mode**|Create `_update` files for structural changes; **Directly append** notes/commands to existing Vault files.|
+|**2 – Proposal mode**|Ask before creating/updating any `_update` or note file.|
+|**3 – Test / read-only mode**|No writes, no `_update` files; validate routing and logic only.|
+
+**Authority Rule:**
+
+- README.md is the **Single Source of Truth** for routing, update governance, and execution safety.
+    
+- MCP must read this file before any other.
+    
+- Conflicting info in other files → **README.md rules win**.
+    
+- `_update` files are **never read during runtime execution**.
+    
+
+---
+
+## 3. Available MCP Servers or Skills
+
+_(Capability Registry - Must have a corresponding file in the vault)_
+
+- **Name:** desktop-commander
+    - **Primary capabilities:** File system operations (read/write/edit/search), command execution, process management, interactive REPLs, directory management, configuration management
+    - **Vault location:** `/Users/gad.ofir/Documents/testmcp/testmcp/vault/desktop-commander.md`
+
+- **Name:** environments
+    - **Primary capabilities:** Testing environment credentials and URLs (UAP, SCA projects with int77, prod02 environments), working environment URLs (GitHub, Jira, Confluence)
+    - **Vault location:** `/Users/gad.ofir/Documents/testmcp/testmcp/vault/environments.md`
+        
+
+---
+
+## 4. Canonical Paths Registry (Authoritative)
+
+**Authoritative Paths:**
+
+- `README.md`: Root Context
+- `vault/`: `/Users/gad.ofir/Documents/testmcp/testmcp/vault/` | MCP Server/Skill vault files
+    
+
+**Frequently Used Paths:**
+
+- `desktop-commander vault`: `/Users/gad.ofir/Documents/testmcp/testmcp/vault/desktop-commander.md` | Primary local executor documentation
+- `environments vault`: `/Users/gad.ofir/Documents/testmcp/testmcp/vault/environments.md` | Testing and working environment credentials and URLs
+    
+
+---
+
+## 5. Task Classification & Decision Chains
+
+Decision Chain Structure (Strict Priority):
+
+Decision Chain → Context Source → Primary Knowledge Source → Fallback Source → MCP Execution.
+
+1. **Consult Authority:** Check README.md for rules or specific Decision Chains.
+   
+    
+2. **Locate Context:** Check Vault logs for similar past tasks or Context IDs. 
+    
+3. **Execute:** Use the appropriate MCP server or skill defined in Section 3.
+    
+
+---
+
+## 6. Shadow Update Files (`_update` Mechanism)
+
+**Purpose:** Stage proposed changes safely without auto-overwriting originals.
+
+**Rules:**
+
+- **Required for:** Significant structural changes, logic updates, or file refactors or any new comments ,if **UPDATE_STRATEGY = 2  ask in prompt , before any change 
+    
+- **Not required for:** when .**UPDATE_STRATEGY = 3 ** 
+
+    
+- **Format:** Must contain current state detection, proposed logic, and the specific section being updated.
+    
+
+---
+
+## 7. Optimization & Reconciliation Policy
+
+**Flow:**
+
+1. Locate `_update` file and compare against original.
+    
+2. Propose changes to user; **never auto-apply**.
+    
+3. If approved, update the original file and **update readme_update.md** if needed.
+    
+
+---
+
+## 8. Vault Creation & Expansion Policy
+
+- **New Vault Files:** Created for new MCP or  servers or significant project Epics/Skills.
+    
+- **Mandatory Registry Update:** Upon creation of any new Vault file, the AI **MUST** immediately update **Section 3 (Capability Registry)** and **Section 4 (Paths)** in the README to reflect the new resource.
+    
+- **Cross-Vault Linking:** If an action affects multiple files, provide a reference link between them to avoid duplication.
+    
+- **Context-Aware Triggers:** AI will assign a `Context ID` (e.g., `TASK-101`) to all command logs to allow for history tracking and self-healing.
+    
+- **User Confirmation:** Creation of all new `.md` files requires user approval, even in Strategy 1.
+* ***Path Discovery:** If a specific local path is used frequently across tasks, the AI must propose adding it to the **Section 4 Registry** to prevent path-guessing in future sessions.
+
+
+---
+
+## 9. Maintenance & Self-Optimization
+
+- **Summarization:** Every 20 entries in a Vault file, AI must propose a summary of "Key Learnings" to the top of the file via the `_update` mechanism.
+    
+- **No Data Loss:** No information is permanently deleted; old or redundant data must be moved to `./vault/archive/` before removal from active files.
+    
+- **Reporting Protocol:** AI will present maintenance summaries via `_update`. Approved insights are mirrored in a "System Insights" section in README.md for visibility.
+    
+
+---
+
+## 10. Pre-Creation Protocol (Inquiry First)
+
+**Before creating any new Vault file, AI MUST stop and ask the user:**
+
+1. **Scope Definition:** What is the exact boundary of this file's responsibility?
+    
+2. **Existing Knowledge:** Are there past commands, scripts, or errors that should be documented immediately?
+    
+3. **Missing Info:** Are technical details (ports, specific hostnames, or permissions) missing that are needed to fill the template?
+    
+4. **Registry Confirmation:** Acknowledge that Section 3 will be updated with this new skill/server upon creation.
+    
+
+---
+
+## 11. Vault File Template (V1.1)
+
+Markdown
+
+```
+# <Name> – Vault File (AUTO-GENERATED)
+**Metadata:** [Logic: Phase 1.1 | Strategy: <UPDATE_STRATEGY>]
+**Active Context:** [ID: <Auto-Generated Context ID> | Task: <Description>]
+
+## Purpose
+- Describe server tasks skils or epic scope.
+
+## Decision Chains (Inherited)
+- Specific logic chains for this file's context.
+
+## Common Commands (Direct Append allowed in Strategy 1)
+- Commands, scripts, or procedures used during execution.
+
+## Common Issues (Direct Append allowed in Strategy 1)
+- Errors encountered (Testing | Infrastructure | Unknown).
+
+## Key Learnings / Summary
+- Distilled insights from maintenance cycles.
+
+## Notes / Observations
+- Detected behaviors, optimization hints, or Context ID summaries.
+```
+
+---
+
+## 12. Onboarding & System Start (TEMPORARY)
+
+**Status:** `[PENDING INITIALIZATION]`
+
+**Mandatory Sequence:**
+
+1. **Fill Context:** User must populate Section 1, 2, and 3.
+    
+2. **Cleanup Trigger:** Once the first Vault file (e.g., `vault/mcp-mac-cli.md`) is created, the AI will:
+    
+    - Create `vault/miscellaneous.md`.
+        
+    - Move all instructional text (like this Section 12) to that file.
+        
+    - Delete this Section 12 from README.md to move to "Production Mode."
