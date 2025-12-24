@@ -1,4 +1,4 @@
-# README.md – Phase 1.1 (Operational Master)
+# README.md – System Operational Master
 
 ---
 
@@ -172,7 +172,7 @@ All routing, decision chains, and execution logic operate on these three types.
 
 ## 3. Available Data, Skills, and Projects
 
-_(Capability Registry – must have a corresponding vault file)_
+_(Capability Registry The AI must maintain this list. If a file is created and not listed here, it is "Invisible" to the Decision Chain)_
 
 
 - **Name:** 
@@ -310,7 +310,7 @@ Before creating any new vault file, AI MUST ask:
 
 ## 11. Vault File Template (V1.2)
 # <Name> – Vault File (AUTO-GENERATED)
-**Metadata:** [Type: Data | Skill | Project | Logic: Phase 1.1 | Strategy: <UPDATE_STRATEGY>]
+**Metadata: [Type: Data | Skill | Project | Strategy: <UPDATE_STRATEGY>]
 **Active Context:** [ID: <Context ID> | Task: <Description>]
 
 ## Execution Prompt (Copy & Use)
