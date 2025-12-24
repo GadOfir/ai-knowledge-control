@@ -97,6 +97,7 @@ If no relevant CID is found, follow this protocol:
 
 Metadata: [Type: Data | Skill | Project | Strategy: `<UPDATE_STRATEGY>`]  
 Active Context: [CID: `<Registry ID>` | Task: `<Current Operation Description>`]
+RULE: Use <OPTIONAL_INPUT> for undecided fields or leave blank. Add <!--AI_NOTE--> only when information is solid and not speculative.
 
 ### Execution Prompt (Copy & Use)
 
