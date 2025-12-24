@@ -200,7 +200,7 @@ _(Capability Registry – must have a corresponding vault file)_
 ---
 
 ## 5. Task Classification & Decision Chains
-
+**This section defines how tasks are routed from context to execution.**
 **Decision Chain Structure (Strict Priority)**
 
 Decision Chain  
