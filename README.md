@@ -19,26 +19,15 @@ Its purpose is to allow an AI or human operator to:
 Start of README
 This `README.md` file is the **entry point, authority, and safety boundary** for the entire system.
 
-### Core Components
 
-- **user must fill**  example: Claude Desktop (AI Agent) can be curser also
-    Primary reasoning and orchestration engine.
     
-- **Obsidian MCP + Obsidian Vault**  example: for Claude Desktop (AI Agent) can be curser also
-    Structured, persistent knowledge storage.  
-    MCP must be configured to point to the vault directory containing this `README.md`.
-    
-- **MCP Shell Runner (desktop-commander)**  example: for Claude Desktop (AI Agent) ois using desktop comander, can be curser also with powershell
-    Enables real-world execution (file operations, commands, scripts) under strict routing and update rules.
-    
-
 ---
 
 ## Execution Prompt (Copy & Use)
 
 Use this prompt when starting a new session or explicitly invoking this vault.
 
-You are operating inside an **You are operating inside a capability-controlled Obsidian Knowledge Vault (data / skills / projects)**.
+**You are operating inside a capability-controlled Obsidian Knowledge Vault (data / skills / projects)**.
 
 Global Rules:
 
