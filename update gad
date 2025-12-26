@@ -5,4 +5,10 @@ deploy a mechanism like we have in more fetures
 
 2. improve working dircorty mecahnisem so we dont get lost
 
+
+
+3. mechnezim for first intilze to check if we are on mac/win/linux
+create governace for intilzie cheks to remvoe after first intilze to make the readme light
+spreatge the doc to tasks required for init and priotitez them last , but only after we did a full init
+
 4. test the prompt mechniesm for both root and temaplate 
