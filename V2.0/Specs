@@ -2,12 +2,40 @@ i have this readme that i created , its becuoming to havy i think i shuld re wri
 
 re order and optmize them 
 
+
+Improve:
+Global Update Strategy > simplfy for just 2
+Global Update Strategy -  
+user will be able to work and files will be created in bacground for him per UPDATE_STRATEGY = 1 
+no new files will writen in the bacground if the user wants AI will ask the user if to change from  UPDATE_STRATEGY = 1 to UPDATE_STRATEGY = 2
+
+
+what do we need:
+
+2.fix the user entry point with readme file > make it more leaner , you need to say you want to use your folder 
+executian prompt shuld be the first thing the AI sees
+3.
+
+
+high level:
+
+Global Update Strategy -  
+user will be able to work and files will be created in bacground for him per UPDATE_STRATEGY = 1 
+no new files will writen in the bacground if the user wants AI will ask the user if to change from  UPDATE_STRATEGY = 1 to UPDATE_STRATEGY = 2
+
+
+
+priority:
 1. lets think of a prioirty for each feture
-2.
+
+create a mechinesim to prioteze onboadring stuff first if onboarding
+and if on prodaction it will first look at prod stuff
+
+UPDATE_STRATEGY = 1 (Build/Stage mode)
+SYSTEM_STATUS = TEMPLATE (see Section 8)
 
 
-
-what we have noo
+what we have now
 
 System Overview (What This System Is)
 This repository is a routing-first, capability-controlled Obsidian Knowledge Vault. It ensures all AI actions are deterministic and safe through strict data typing (Data, Skill, Project).
