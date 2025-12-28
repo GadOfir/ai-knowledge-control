@@ -23,6 +23,9 @@ Global Update Strategy -
 user will be able to work and files will be created in bacground for him per UPDATE_STRATEGY = 1 
 no new files will writen in the bacground if the user wants AI will ask the user if to change from  UPDATE_STRATEGY = 1 to UPDATE_STRATEGY = 2
 
+remove: System Status & Lifecycle
+
+simplfy it
 
 
 priority:
@@ -35,17 +38,86 @@ UPDATE_STRATEGY = 1 (Build/Stage mode)
 SYSTEM_STATUS = TEMPLATE (see Section 8)
 
 
-what we have now
+2. simpfy temaplate 
+make sure it will only have one temaplte stracture for both 
 
-System Overview (What This System Is)
-This repository is a routing-first, capability-controlled Obsidian Knowledge Vault. It ensures all AI actions are deterministic and safe through strict data typing (Data, Skill, Project).
+for porjects only 
 
-[!INFO] Why?
-By categorizing knowledge, the AI never guesses which rules to follow. It knows whether it's reading reference facts (Data), step-by-step procedures (Skill), or active work tracking (Project).
+# Vault File (AUTO-GENERATED)
 
-Execution Prompt (Runtime Authority)
+Metadata: [Type: Skill | Project | Strategy: {{UPDATE_STRATEGY}}]  
+Active Context: [CID: {{Registry ID}} | Task: {{Current Operation Description}}]
+
+RULE: Use {{OPTIONAL_INPUT}} for undecided fields or leave blank. Add only when information is solid and not speculative.
+
+## Execution Prompt (Copy & Use)
+
+- Authority: README.md | Update Strategy: Inherited
+- Rules: **STAGING ONLY**. Do not write to original files.
+- Task: {{DESCRIBE GOAL}}
+- Expected Output: A staged `_update` file containing actions/logs for user revie
+
+ ##Decision Chain
 
 
-. Global Update Strategy & Authority (Write Permission Modes)
+## Key Learnings
 
-2. Master Vault Registry (Index & Paths)
+will house all the other stuff 
+like 
+Purpose
+Common Commands
+Common Issues
+Key Learnings
+Notes
+
+## Project File Registry (For Project Type Only)
+
+
+slef healing:
+
+1. make sure CIDs are ok and fix if not 
+2. optmize temaplte files on the fly , 
+3. excutain promt opmtzisen
+
+
+vault Expansion & Autonomy Policy (Growth Control Rules)
+Data & Skill Files: Requires individual user confirmation and Registry entry for every file
+Project Autonomy: Requires confirmation for the Project Root Folder and Index File only.
+Local Freedom: Inside an approved Project Folder, the AI may create sub-folders and files (logs, artifacts) without individual Registry entries, provided they are linked in the Project Index.
+Root has only README.md; project files/data types are created in folders named after the project
+
+
+4. Shadow Staging & Reconciliation
+
+Staging: Create filename_update.md for ANY change to vault content.
+
+Reconciliation: Compare _update with original → Propose to user → Apply only after approval.
+Cleanup: Delete _update files immediately after successful reconciliation
+
+
+Unified Execution Brain (Routing & Growth)
+Phase A: Routing (Decision Chain)
+Consult R01: Establish global rules and current strategy.
+Locate Context: Search Section 2 Registry for CIDs whose Purpose/Capability matches the user's request
+Validate CID Structure:
+Skill/Project CIDs: Must have Execution Prompt section
+Data CIDs: Must have Authority declaration
+If malformed: Report error to user, suggest fixing CID or removing from Registry
+Execute: If valid, open that file, read its Execution Prompt, and follow those instructions combined with global rules
+Phase B: Growth (Pre-Creation Protocol)
+If no relevant CID is found, follow this protocol:
+
+Inquiry: Ask the user for scope and existing knowledge to be captured.
+Missing Info: Identify missing technical details (ports, hostnames, permissions).
+Registry Proposal: Propose a new CID, Type, and Path for Section 2.
+
+
+Execution Prompt (Runtime Authority
+
+Authority: README.md is the Single Source of Truth , unless i ask you not to use it 
+
+System Status: TEMPLATE (awaiting onboarding) - need to think abot this moore 
+Update Strategy: 1 (Build/Stage mode) - this is ok
+
+Safety: The AI is FORBIDDEN from writing to original files directly  - need to think abot this moore 
+
