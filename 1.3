@@ -1,0 +1,181 @@
+# README.md - System Operational Master V1.3
+
+## 1. Execution Prompt (Runtime Authority)
+
+**You are operating inside a capability-controlled MCP Folder Vault.**
+This vault assumes a Markdown-only workflow. Output must remain compatible with Obsidian file navigation and linking behavior.
+
+- **Authority:** `README.md` is the **Single Source of Truth**.
+- **Role:** Deterministic execution engine.
+- ** Skills and Data are global resources. They must be created in /skills and /data at the root level, not inside project folders.**
+- **Safety:** **FORBIDDEN** from writing to original files directly.
+- **Protocol:** All changes (Logs, Logic, Registry) **MUST** be staged in `filename_update.md` and approved by the user.
+- **Auto-Optimization:** Every time you generate an `_update` file, you must review and optimize the target file's "Execution Prompt" to reduce verbosity and remove "slop".
+
+**CRITICAL TROUBLE PROTOCOL:**
+If `README.md` is corrupt, CIDs are missing, or instructions are ambiguous:
+> **STOP IMMEDIATELY.** Do not guess.
+> **Reply:** "HELP NEEDED: System Authority Compromised [Reason]. Reply with manual fix instructions or 'Proceed Anyway'."
+
+---
+
+## 2. System Overview & Status
+
+**Concept:** Routing-first, strict-typed storage (Data, Skill, Project).
+**Current Status:** `INIT` (Awaiting Onboarding)
+**Version:** V1.3
+
+| Resource | Count | Note |
+| :--- | :--- | :--- |
+| **Projects** | 1 | P01 created |
+| **Skills** | 1 | S01 created |
+| **Data** | 0 | Ready for creation |
+| **Registry** | 3 | R01 (Root), S01 (ConversationMemory), P01 (README-CICD) |
+
+**Lifecycle:**
+1.  **INIT:** Fresh vault. (Current)
+2.  **ACTIVE:** After 1st CID created + Status updated manually.
+
+---
+
+## 3. Global Update Strategy
+
+**Current Configuration:** `UPDATE_STRATEGY = 1`
+
+| Value | Name | Behavior & Rules |
+| :--- | :--- | :--- |
+| **1** | **Build** | **Stage ALL** changes in `_update.md` for review. (Dev/Growth) |
+| **2** | **Read-Only** | **NO WRITES.** Validate/Route only. **IGNORE** Sections 6, 7, & 8. |
+
+**Override:** If user explicitly orders "Direct Edit," bypass staging (use caution).
+
+---
+
+## 4. Master Vault Registry (Index & Paths)
+
+**Maintenance:** Update via `README_update.md` only.
+**Self-Heal:** If CID missing/broken → Search folder by metadata → Propose Registry fix.
+
+**CID Registration Rules:**
+- **README.md:** Contains master registry with ALL CIDs (Skills, Data, Projects)
+- **Skills:** Only list CIDs they depend on (e.g., R01 for README authority)
+- **Data:** Only list CIDs they depend on (e.g., R01 for README authority)
+- **Projects:** Only ONE CID table in main project file (folder root). Sub-files should NOT have CID metadata.
+Project Layout Rule: Additional folders like docs/ or runner/ are optional and only created if user requests them or its needed for the flow  
+
+| CID | Name | Type | Capability / Purpose | Authoritative Path |
+| :--- | :--- | :--- | :--- | :--- |
+| R01 | README | Skill | System Authority & Routing | `README.md` |
+
+---
+
+## 5. Unified Execution Brain (Routing)
+
+### Phase A: Routing (Decision Chain)
+
+1.  **Read R01:** Establish Strategy.
+2.  **Match Context:** Search Registry for CID matching User Request.
+3.  **Validate:**
+    * **Skill/Project:** Must have `## Execution Prompt`.
+    * **Data:** Must have `## Authority`.
+    * *Fail?* Trigger **Trouble Protocol** (Section 1).
+4.  **Execute:** Follow Target File rules + Global Safety.
+
+### Phase B: Growth (Creation Protocol)
+*(Ignore if UPDATE_STRATEGY = 2)*
+
+If no relevant CID found:
+1.  **Inquiry:** Ask user for Scope/Existing Knowledge (Micro-questions only).
+2.  **Naming:** AI proposes `Purpose-Type.md` (e.g., `GitOps-Skill.md`).
+    * *Rule:* Only **ONE** `README.md` allowed in root. Rename others (e.g., `README_old.md`).
+    * *Rule:* Skills go in `/skills/` folder, NOT in project subfolders.
+    * *Rule:* Project sub-files (like `pipeline/analyzer.md`) should NOT have CID metadata - only main project file.
+3.  **Proposal:** Stage new CID entry in Registry + Create File via Template (Section 8).
+
+---
+
+## 6. Shadow Staging & Folder Rules
+*(Ignore if UPDATE_STRATEGY = 2)*
+
+**Staging Protocol:**
+Folder Creation Limiter: Only the main folder is created automatically. Subfolders like docs/ or runner/ require user confirmation before creation.
+1.  Create `target_update.md`.
+2.  User reviews & approves.
+3.  Merge to `target.md` -> Delete `_update`.
+
+
+
+**Folder Enforcements:**
+
+| Type | Enforced Path | Scope Rules |
+| :--- | :--- | :--- |
+| **Root** | `/` | `README.md` only. |
+| **Data** | `/data/` | Reference only. No execution. |
+| **Skill** | `/skills/` | Standard Operating Procedures. **NOT in project subfolders.** |
+| **Project** | `/projects/{name}/` | Autonomy allowed via **Project Index**. Sub-files should NOT have CID metadata. |
+
+**Project Autonomy:** Inside `/projects/{name}/`, AI may create sub-files without Global Registry entries, provided they are listed in the Project's internal Index. However, sub-files should NOT contain CID metadata - only the main project file should have CID registration.
+
+---
+
+## 7. Maintenance & Self-Healing
+*(Ignore if UPDATE_STRATEGY = 2)*
+
+1.  **Prompt Refinement:** On **every** write operation, scan the file's `Execution Prompt`. If verbose/sloppy, propose a tighter version in the `_update`.
+2.  **Registry Repair:** If a Registry Path 404s, search the file system for the CID.
+    * *Found:* Propose Registry path update.
+    * *Lost:* Trigger Trouble Protocol.
+3.  **CID Registration Validation:** Ensure CID tables only exist where appropriate:
+    * README.md: Master registry (all CIDs)
+    * Skills: Only dependent CIDs (e.g., R01)
+    * Data: Only dependent CIDs (e.g., R01)
+    * Projects: Only main file has CID table, sub-files should NOT have CID metadata
+
+---
+
+## 8. Universal File Template (Smart)
+*(Ignore if UPDATE_STRATEGY = 2)*
+
+*Use this structure for ALL new files. Logic applies based on Type.*
+Content Limit Rule: New files should contain only essential structure (≤20 lines). No extra assumptions, filler content, or speculative text without request.
+
+```markdown
+# {Filename}
+
+{{IF TYPE = SKILL OR PROJECT}}
+Metadata: [Type: {{Data|Skill|Project}} | CID: {{ID}} | Strategy: Inherited]
+
+## Execution Prompt (Runtime)
+- **Authority:** README.md
+- **Action:** {{VERB}} {{OBJECT}}
+- **Output:** Staged `_update` file.
+{{END IF}}
+
+{{IF TYPE = DATA}}
+## Authority
+**Type:** Data (Reference Only). No execution logic.
+{{END IF}}
+
+## Purpose
+{{Micro-statement of goal}}
+
+## Content / Decision Chains
+{{Logic, Rules, Data Tables, or SOP Steps}}
+
+## Notes
+{{Learnings, Common Commands, Issues}}
+
+{{IF TYPE = PROJECT}}
+## Project Index
+*Local Authority for /projects/{name}/*
+| Path | Purpose | Created By |
+| :--- | :--- | :--- |
+| {{path}} | {{desc}} | AI/User |
+{{END IF}}
+```
+
+**CID Registration Rules in Template:**
+- **Skills:** Add CID dependency table only if skill depends on other CIDs (e.g., R01)
+- **Data:** Add CID dependency table only if data depends on other CIDs (e.g., R01)
+- **Projects:** Main file has CID metadata. Sub-files (like `pipeline/analyzer.md`) should NOT have CID metadata - they are project components, not registered resources.
+
