@@ -2,7 +2,10 @@
 
 2. some parts are getting to overloaded i want to reduce the data slop
 
-3. 
+3. improve the part about working with any folder not just obsidean, we just need mcp that can write to files 
+
+4. simplfy onboading life cycle
+5. 
 
 
 
