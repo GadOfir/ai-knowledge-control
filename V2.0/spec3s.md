@@ -12,6 +12,10 @@ check where ever i put "^" for comments
 
 6. optmize the readme to take less space , try to use more micro stemants dont take funcinlty away
 
+7. try to think of mechinizem that if readme file gets in trouble he will ask the user for help
+
+8. executian prompt shuld be the first thing the AI sees
+
 
 
 
