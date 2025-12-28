@@ -1,4 +1,4 @@
-# README.md - System Operational Master V1.2
+# README.md - System Operational Master V1.2 - ^ ok 
 
 ## System Onboarding: [----------] 0%
 
@@ -6,14 +6,15 @@
 
 ## System Overview (What This System Is)
 
-This repository is a **routing-first, capability-controlled Obsidian Knowledge Vault**. It ensures all AI actions are deterministic and safe through strict data typing (**Data, Skill, Project**).
+This repository is a **routing-first, capability-controlled Obsidian Knowledge Vault**. It ensures all AI actions are deterministic and safe through strict data typing (**Data, Skill, Project**). ^i want to change this so not only obsidean but it can use obsidean for conviance , any MCP with abilty to write to files
+
 
 > [!INFO] **Why?**  
-> By categorizing knowledge, the AI never guesses which rules to follow. It knows whether it's reading reference facts (Data), step-by-step procedures (Skill), or active work tracking (Project).
+> By categorizing knowledge, the AI never guesses which rules to follow. It knows whether it's reading reference facts (Data), step-by-step procedures (Skill), or active work tracking (Project). ^ - micro steamnt check if needed or just for humen info
 
 ---
 
-## Execution Prompt (Runtime Authority)
+## Execution Prompt (Runtime Authority) ^ make sure it will get auto repaierd each time we optmzie ceack how much it will take us to optmize each run and is it worth it
 
 **You are operating inside a capability-controlled Obsidian Knowledge Vault.**
 
@@ -27,27 +28,30 @@ This repository is a **routing-first, capability-controlled Obsidian Knowledge V
 
 ## 1. Global Update Strategy & Authority (Write Permission Modes)
 
-**UPDATE_STRATEGY =** `1`
+**UPDATE_STRATEGY =** `1` ^ make sure it will get auto repaierd each time we optmzie ceack how much it will take us to optmize each run and is it worth it
 
 |Value|Behavior|
 |---|---|
-|**1 - Build**|Stage **ALL** data (Notes, Logs, Structure) in `_update` files for user review.|
-|**2 - Proposal**|Ask for permission _before_ even creating an `_update` file.|
-|**3 - Read-Only**|No writes allowed; validate routing and logic only.|
+|**1 - Build**|Stage **ALL** data (Notes, Logs, Structure) in `_update` files for user review.| ^ we need less data in temaplte and make the promt auto corect each time we update the reamde 2
+|**2 - Proposal**|Ask for permission _before_ even creating an `_update` file.| ^ want to remove this 
+|**3 - Read-Only**|No writes allowed; validate routing and logic only.| ^ ok but lets think cerffuly abot this again how do incoparete this better now that 2 is gonw When to Use Each Strategy:
 
+
+ 
 **When to Use Each Strategy:**
-- **Strategy 1 (Build/Stage):** Development and validation phases - active feature work
-- **Strategy 2 (Proposal):** Conservative development - sensitive operations requiring extra caution
-- **Strategy 3 (Read-Only):** Production vaults - immutable references, no modifications allowed
+- **Strategy 1 (Build/Stage):** Development and validation phases - active feature work ^ we need less data in temaplte and make the promt auto corect each time we update the reamde
+- **Strategy 2 (Proposal):** Conservative development - sensitive operations requiring extra caution - ^ want to remove this 
+- **Strategy 3 (Read-Only):** Production vaults - immutable references, no modifications allowed ^ ok but lets think cerffuly abot this again how do incoparete this better now that 2 is gonw When to Use Each Strategy:
 
 **Current Configuration:**
-- UPDATE_STRATEGY = 1 (Build/Stage mode)
-- SYSTEM_STATUS = TEMPLATE (see Section 8)
+- UPDATE_STRATEGY = 1 (Build/Stage mode) ^ ok
+- SYSTEM_STATUS = TEMPLATE (see Section 8) ^ lets see how we imrpvoe onboadring we want to simplfy it
 - This combination is appropriate for a fresh vault awaiting onboarding
 
 ---
 
-## 2. Master Vault Registry (Index & Paths)
+## 2. Master Vault Registry (Index & Paths)  ^ this is the best part of the system we want to give this part the best attenation
+
 
 _The AI must maintain this table. Any file/container not listed here is "Invisible" to the system._
 
@@ -139,7 +143,8 @@ If no relevant CID is found, follow this protocol:
 
 ## 7. Vault File Template V1.4 (Standard File Structure)
 
-### For Skill/Project CIDs (Type: Skill | Project)
+### For Skill/Project/Data CIDs (Type: Skill | Project | Data) ^ add data type to this temaplte also but dont use the same temaple values 
+make a rule in it
 
 ```markdown
 # Vault File (AUTO-GENERATED)
@@ -162,23 +167,13 @@ What this file exists to accomplish.
 
 ## Decision Chains
 
-If-then logic for common scenarios in this domain.
 
-## Common Commands
 
-Frequently used commands/code snippets for this context.
 
-## Common Issues
+## Key Learnings ,Common Issues , Common Commands, Notes
 
-Known problems and their solutions.
 
-## Key Learnings
 
-Important discoveries from real use.
-
-## Notes
-
-Miscellaneous observations and context.
 
 ## Project File Registry (For Project Type Only)
 
@@ -192,36 +187,12 @@ _If Type is Project, maintain this table to track all files in the project. Simi
 ---
 
 ### For Data CIDs (Type: Data)
-
-Data CIDs store reference information and don't execute actions, so they don't need a full Execution Prompt. Use this simplified template:
-
-```markdown
-# Data File
-
-**Authority:** README.md  
-**Type:** Data (Reference only)  
-**Update Strategy:** Inherited from README Section 1
-
-Metadata: [CID: {{Registry ID}} | Category: {{Data Category}}]
-
----
-
-## Purpose
-
-What data this file contains and why it exists.
-
-## Content
-
-[Actual data - YAML, JSON, markdown tables, configuration, etc.]
-
-## Notes
-
-Context, source, usage information, or related CIDs.
+^ (combine the two temapltes , and make rules , this is too long for the tempalte , make it smarter )
 ```
 
 ---
 
-## 8. System Status & Lifecycle
+## 8. System Status & Lifecycle - simply the entire on borading an lifexcycle 
 
 **SYSTEM_STATUS =** `TEMPLATE`  
 **Version:** v1.2-CANDIDATE  
