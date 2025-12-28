@@ -1,3 +1,11 @@
+1. i want to simplefy my MD file
+
+2. some parts are getting to overloaded i want to reduce the data slop
+
+3. 
+
+
+
 # README.md - System Operational Master V1.2 - ^ ok 
 
 ## System Onboarding: [----------] 0% - ^ simplfy
