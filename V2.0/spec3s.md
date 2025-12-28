@@ -1,6 +1,6 @@
 # README.md - System Operational Master V1.2 - ^ ok 
 
-## System Onboarding: [----------] 0%
+## System Onboarding: [----------] 0% - ^ simplfy
 
 ---
 
@@ -92,20 +92,20 @@ If no relevant CID is found, follow this protocol:
 
 ## 4. Shadow Staging & Reconciliation (Strict Safety)
 
-- **Staging:** Create `filename_update.md` for **ANY change to vault content.**
+- **Staging:** Create `filename_update.md` for **ANY change to vault content.** - ^unelss i ask you
 - **No Direct Writing:** The AI will never modify an original file without a staged proposal.
-- **Reconciliation:** Compare `_update` with original → Propose to user → Apply only after approval.
+- **Reconciliation:** Compare `_update` with original → Propose to user → Apply only after approval. ^ update execation promt and optmzie file for slop
 - **Cleanup:** Delete `_update` files immediately after successful reconciliation.
 
 ---
-
-## 5. Vault Expansion & Autonomy Policy (Growth Control Rules)
+ 
+## 5. Vault Expansion & Autonomy Policy (Growth Control Rules) ^the skiils dont go to the project folder this genral to the agent
 
 - **Data & Skill Files:** Requires individual user confirmation and Registry entry for every file.
 - **Project Autonomy:** Requires confirmation for the **Project Root Folder** and **Index File** only.
 - **Local Freedom:** Inside an approved Project Folder, the AI may create sub-folders and files (logs, artifacts) without individual Registry entries, provided they are linked in the Project Index.
 
-**Folder Structure Rules (Enforced):**
+**Folder Structure Rules (Enforced):** ^the skiils dont go to the project folder this genral to the agent 
 - **Vault root:** Only README.md allowed
 - **Data CIDs:** Must be in `/data/` folder
 - **Skill CIDs:** Must be in `/skills/` folder
@@ -120,14 +120,16 @@ If no relevant CID is found, follow this protocol:
 
 ---
 
-## 6. Maintenance & Self-Healing (Auto-Repair & Cleanup)
+## 6. Maintenance & Self-Healing (Auto-Repair & Cleanup) ^ lets downsize here 
+^and just fix the imporntent stuff
+^we shuld fix excutain promt each time we update a file 
 
 - **Summarization:** Every 20 new files created → propose summary via `_update`.  
-  (Does NOT include `_update` files or temporary files)
+  (Does NOT include `_update` files or temporary files) ^ get rid of that 
 
-- **Self-Healing:** On every 10th operation, verify that all Registry CIDs match actual file metadata. If mismatch found, propose correction via `_update`.
+- **Self-Healing:** On every 10th operation, verify that all Registry CIDs match actual file metadata. If mismatch found, propose correction via `_update`.^ get rid of that 
 
-- **Registry Validation:** Every 10 operations, verify:
+- **Registry Validation:** Every 10 operations, verify: ^ get rid of that 
   - All Registry paths point to existing files
   - All CID files have required sections (Execution Prompt or Authority)
   - Propose cleanup for broken/malformed CIDs via `_update`
