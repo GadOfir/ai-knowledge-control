@@ -1,3 +1,5 @@
+check where ever i put "^" for comments 
+
 1. i want to simplefy my MD file
 
 2. some parts are getting to overloaded i want to reduce the data slop
@@ -5,7 +7,11 @@
 3. improve the part about working with any folder not just obsidean, we just need mcp that can write to files 
 
 4. simplfy onboading life cycle
-5. 
+
+5. fix some bugs 
+
+6. optmize the readme to take less space , try to use more micro stemants dont take funcinlty away
+
 
 
 
@@ -72,15 +78,14 @@ _The AI must maintain this table. Any file/container not listed here is "Invisib
 
 **Maintenance Protocol:**
 - All Registry updates **MUST** be staged in `README_update.md`
-- Never edit Registry directly (violates UPDATE_STRATEGY)
+- Never edit Registry directly (violates UPDATE_STRATEGY)^ only if user asks 
 - Add entries during Phase B (Growth) via staging mechanism
-- Self-Healing (Section 6) validates registry every 10 operations
-- User approves all registry changes before merging
+- Self-Healing (Section 6) validates registry every 10 operations - ^ we are going to remove this we need to come up we another way for this to haapen maybe if it cant find it 
+- User approves all registry changes before merging - 
 
 ---
 
-## 3. Unified Execution Brain (Routing & Growth)
-
+## 3. Unified Execution Brain (Routing & Growth) ^ very imprornt part impove it make vault self heal when cant find CID
 ### Phase A: Routing (Decision Chain)
 
 1. **Consult R01:** Establish global rules and current strategy.
