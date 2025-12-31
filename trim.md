@@ -4,24 +4,24 @@ AI acts only when I type:
 notes: {VERB} {OBJECT}
 notes: check {OBJECT}
 
-VERBS (allowed):
-add, update, fix, install, document, review, plan, check
+VERBS:
+add, update, fix, configure, document, review, plan, check
 
-FILE RULES:
-- File name = {OBJECT}.md
-- If file exists → update it
-- If not → create it
-- Keep log short
+RULES:
+- Touch only the file for {OBJECT}
+- If exists → update. If missing → create.
+- Filename: {OBJECT}.md
+- No scanning the whole vault
+- Ask once if unclear
 
-NOTE FORMAT:
+FORMAT:
 # {OBJECT}
 Action: {VERB} {OBJECT}
 Log:
 - YYYY-MM-DD {entry}
 
 EXAMPLES:
-notes: update pfsense vpn
-notes: fix leaking sink
-notes: document family schedule
+notes: update pfsense
+notes: fix sink
+notes: configure vpn
 notes: check pfsense
-notes: check plumbing
