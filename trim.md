@@ -1,20 +1,20 @@
 # VAULT CONTROL README
 
-AI acts only when I type:
+Trigger format:
 notes: {VERB} {OBJECT}
 notes: check {OBJECT}
 
 VERBS:
-add, update, fix, configure, document, review, plan, check
+add, update, fix, configure, document, review, plan
 
 RULES:
-- Touch only the file for {OBJECT}
-- If exists → update. If missing → create.
-- Filename: {OBJECT}.md
-- No scanning the whole vault
-- Ask once if unclear
+- File = {OBJECT}.md
+- If file exists → update; else → create
+- Log entries: one line only
+- Do not scan vault
+- If unsure → ask once
 
-FORMAT:
+NOTE FORMAT:
 # {OBJECT}
 Action: {VERB} {OBJECT}
 Log:
